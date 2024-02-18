@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME2</title>
+    <title>Romeno</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-  
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/client.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
@@ -43,10 +43,12 @@
     </style>
 </head>
 <body class=" bg-blue-500">
+  
+    <a class="text-4xl z-50 material-symbols-outlined fixed bottom-24 right-6 bg-blue-600 active:bg-blue-300 " href="#">keyboard_arrow_up</a>
     <header class="backdrop-blur-3xl  bg-opacity-15 flex gap-3 sticky sm:bg-transparent sm:fixed w-full top-0  h-16 justify-between    sm:h-auto items-center z-50">
-        <div id="logo " class="items-center rounded-br-3xl pr-2 justify-self-start flex border-2 h-16 sm:h-20 bg-white">
+        <a id="logo "href="#" class="items-center cursor-pointer rounded-br-3xl pr-2 justify-self-start flex border-2 h-16 sm:h-20 bg-white">
             <img class=" h-20 rounded-br-3xl " src="./assets/icon.png" alt="Logo">
-        </div>
+        </a>
        
         <nav class="float-right sm:p-4  sm:flex-auto order-1 sm:order-none sm:self-start ">
             <button id="close" onclick="toggle()" class="hidden sm:hidden text-5xl w-16"><span class="material-symbols-outlined text-4xl close">
@@ -79,7 +81,7 @@
                 <li class=" font-bold md:text-lg uppercase"><a href="#whychoose">About</a>
                     
                 </li>
-                <li class="font-bold md:text-lg uppercase"><a href="#">Contact US</a></li>
+                <li onclick="toggleClass()" class="font-bold md:text-lg uppercase"><a href="#">Contact US</a></li>
              
             </ul>
         </nav>
@@ -109,15 +111,52 @@
         </section>
         <div class="mt-[70vh]"></div>
            
-        <div class="  w-full  flex justify-center items-center">
-
-        
-          <img  src="./assets/hero/toptriangle.png" class=" h-full w-full " alt="">
-
-        </div>
+     
        
+        <!-- popupform -->
+        <section id="formpopup" class="fixed bottom-0  z-50 bg-[var(--col3)]  p-10 overflow-hidden  transition-all  -left-96  duration-1000 ">
+         
+          <div>
+           
+            <span onclick="toggleClass()" class=" absolute right-0 top-0 material-symbols-outlined text-4xl cursor-pointer ">close</span>
+            <div class="bg-gray-100  flex items-center justify-center">
+              <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+                <form>
+             
+                  <div class="mb-6">
+                    <label for="postContent" class="block text-gray-700 text-sm font-bold mb-2">Write Content:</label>
+                    <textarea id="postContent" name="postContent" rows="4" class="w-full border-2 rounded-md px-4 py-2 leading-5 transition duration-150 ease-in-out sm:text-sm
+                  sm:leading-5 resize-none focus:outline-none focus:border-blue-500" placeholder="What's on your mind?"></textarea>
+                  </div>
+              
+                  <div class="mb-6">
+                    <label for="fileAttachment" class="block text-gray-700 text-sm font-bold mb-2">Select Your Query</label>
+                    <div class="relative border-2 rounded-md px-4 py-3 bg-white flex items-center justify-between hover:border-blue-500 transition duration-150 ease-in-out">
+                     
+                      <div class="flex items-center">
+                      <select class="w-full h-full flex" name="" id="">
+                        <option value="">Snacks</option>
+                        <option value="">Sweet</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- Submit Button and Character Limit Section -->
+                  <div class="flex items-center justify-between">
+                    <button type="submit" class="flex justify-center items-center bg-blue-500 hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue text-white py-2 px-4 rounded-md transition duration-300 gap-2"> Send <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" id="send" fill="#fff">
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z"></path>
+                      </svg>
+                    </button>
+                    <span class="text-gray-500  hidden sm:flex text-sm">Max 280 characters</span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
         
-        
+
+
 
 <!-- ourfounder -->
 
@@ -165,9 +204,9 @@
               </div>
           </div>
 
-          <div class="flex-grow-5  w-96 grow-[0.5]  ">
+          <div class="flex-grow-5  w-96 grow-[0.5] pt-5  ">
               <h3 class="font-sans font-bold text-4xl text-center">About Our Founder</h3>
-              <span>Meet Rani Patel: Culinary Maestro and CEO Extraordinaire </span>
+          
                 <p class="my-5 text-gray-700">
                 Rani Patel, not only an accomplished CEO but also a culinary enthusiast, brings a unique blend of skills to the forefront. Beyond her corporate prowess, Rani is known for her culinary talents, with a passion for creating delightful dishes that captivate the senses.
               </p>
@@ -184,6 +223,10 @@
                 Join us on this exciting journey led by Rani Patel, where the worlds of culinary excellence and corporate leadership converge, creating a unique and inspiring narrative for ROMENO and its community.</p>
           </div>
         </section>
+
+
+
+
 
         <!-- whychoose -->
         <!-- class="bg-[#18ffbe] pt-24 min-h-screen" -->
@@ -260,6 +303,51 @@
                 </div>
             </div>
         </section>
+
+        <!-- countdown -->
+        <section class="bg-gray-600 p-4  py-12 ">
+          <div class="flex justify-center items-center flex-col gap-y-5 ">
+            <h2 class="font-bold text-5xl text-[var(--col2)] text-center">20% Discount on Snacks!!!</h2>
+            <h3 class="font-black text-2xl text-blue-300">Limited Time Only!..</h3>
+            <div class="text-3xl">
+              <span class="text-red-600 line-through"> 10% off</span><span class="text-green-500"> 20% off</span>
+            </div>
+          
+          </div>
+
+          <div class="flex flex-wrap text-white md;gap-5 mx-auto w-full text-center  md:p-10  ">
+
+            <div class="flex border-2 p-2 md:px-10 rounded-2xl mx-auto flex-wrap">
+              
+            
+            <div class=" border-gray-500  border-2 flex flex-col p-2 bg-neutral-700 rounded-2xl  md:w-20">
+              <span id="days" class="countdown font-mono w-14 text-5xl">
+                <span style="--value:15;"></span>
+              </span>
+              days
+            </div> 
+            <div class=" border-gray-500  border-2 flex flex-col p-2 bg-neutral-700 rounded-2xl  md:w-20 ">
+              <span id="hours" class="countdown font-mono w-14 text-5xl">
+                <span style="--value:10;"></span>
+              </span>
+              hours
+            </div> 
+            <div class=" border-gray-500  border-2 flex flex-col p-2 bg-neutral-700 rounded-2xl  md:w-20">
+              <span id="minutes" class="countdown font-mono w-14 text-5xl">
+                <span style="--value:24;"></span>
+              </span>
+              min
+            </div> 
+            <div class=" border-gray-500  border-2 flex flex-col p-2 bg-neutral-700 rounded-2xl  md:w-20">
+              <span id="seconds" class="countdown font-mono w-14 text-5xl">
+                <span style="--value:6;"></span>
+              </span>
+              sec
+            </div>
+          </div>
+          </div>
+        </section>
+
 
         <!-- Snacks -->
         <!-- class="bg-[#3B3D40] pb-10" -->
@@ -614,6 +702,49 @@
         }
   }
   
+</script>
+<script>
+
+
+var countDownDate = new Date().getTime() + 100000000; // 
+
+
+ 
+  var countdown = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Update the countdown elements
+    document.getElementById("days").innerHTML = days ;
+    document.getElementById("hours").innerHTML = hours ;
+    document.getElementById("minutes").innerHTML = minutes ;
+    document.getElementById("seconds").innerHTML = seconds ;
+
+
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.getElementById("days").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+
+  function toggleClass() {
+      // Get the element you want to toggle
+      var element = document.getElementById('formpopup'); 
+      // Toggle the class
+      element.classList.toggle(['left-0']);
+    }
+
+    // Call toggleClass when the window has fully loaded
+    window.onload = function() {
+      // Call toggleClass after 15 seconds
+      setTimeout(toggleClass, 15000); // 15,000 milliseconds = 15 seconds
+    };
 </script>
 </body>
 </html>
